@@ -1,0 +1,4 @@
+[
+  {"id":"token-bucket","title":"Token-bucket rate limiting","kind":"interactive","file":"token-bucket.html","summary":"Capacity 20 tokens; refill 5 per second. Experiment with bursts and rejection."},
+  {"id":"derivative","title":"From secant to derivative","kind":"video","file":"derivative.html","summary":"A Manim animation shows the secant slope of x squared at x=2 approaching 4, followed by a transfer question."}
+]

@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+runs/
+node_modules/
+.env*
+.DS_Store
+apps/lesson-viewer/work/

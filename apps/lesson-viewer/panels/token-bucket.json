@@ -1,0 +1,354 @@
+{
+  "version": 1,
+  "tabs": [
+    {
+      "id": "controls",
+      "label": "Controls",
+      "spec": {
+        "root": "e0",
+        "elements": {
+          "e0": {
+            "type": "Stack",
+            "props": {},
+            "children": [
+              "e1",
+              "e5",
+              "e11",
+              "e12"
+            ]
+          },
+          "e1": {
+            "type": "Metrics",
+            "props": {},
+            "children": [
+              "e2",
+              "e3",
+              "e4"
+            ]
+          },
+          "e2": {
+            "type": "Metric",
+            "props": {
+              "label": "Tokens",
+              "value": {
+                "$state": "/tokens"
+              },
+              "suffix": "/ 20"
+            },
+            "children": []
+          },
+          "e3": {
+            "type": "Metric",
+            "props": {
+              "label": "Accepted",
+              "value": {
+                "$state": "/accepted"
+              }
+            },
+            "children": []
+          },
+          "e4": {
+            "type": "Metric",
+            "props": {
+              "label": "Rejected",
+              "value": {
+                "$state": "/rejected"
+              }
+            },
+            "children": []
+          },
+          "e5": {
+            "type": "Section",
+            "props": {},
+            "children": [
+              "e6",
+              "e7",
+              "e10"
+            ]
+          },
+          "e6": {
+            "type": "SelectField",
+            "props": {
+              "label": "Requests per burst",
+              "value": {
+                "$bindState": "/inputs/burstSize"
+              },
+              "options": [
+                {
+                  "label": "5",
+                  "value": "5"
+                },
+                {
+                  "label": "10",
+                  "value": "10"
+                },
+                {
+                  "label": "20",
+                  "value": "20"
+                },
+                {
+                  "label": "25",
+                  "value": "25"
+                },
+                {
+                  "label": "50",
+                  "value": "50"
+                }
+              ]
+            },
+            "on": {
+              "change": {
+                "action": "invoke",
+                "params": {
+                  "name": "setBurst"
+                }
+              }
+            },
+            "children": []
+          },
+          "e7": {
+            "type": "ActionRow",
+            "props": {},
+            "children": [
+              "e8",
+              "e9"
+            ]
+          },
+          "e8": {
+            "type": "Button",
+            "props": {
+              "label": "Send 1",
+              "variant": "primary"
+            },
+            "on": {
+              "press": {
+                "action": "invoke",
+                "params": {
+                  "name": "sendOne"
+                }
+              }
+            },
+            "children": []
+          },
+          "e9": {
+            "type": "Button",
+            "props": {
+              "label": "Send burst",
+              "variant": "secondary"
+            },
+            "on": {
+              "press": {
+                "action": "invoke",
+                "params": {
+                  "name": "sendBurst"
+                }
+              }
+            },
+            "children": []
+          },
+          "e10": {
+            "type": "Status",
+            "props": {
+              "text": {
+                "$state": "/result"
+              }
+            },
+            "children": []
+          },
+          "e11": {
+            "type": "Separator",
+            "props": {},
+            "children": []
+          },
+          "e12": {
+            "type": "Section",
+            "props": {},
+            "children": [
+              "e13",
+              "e14"
+            ]
+          },
+          "e13": {
+            "type": "Text",
+            "props": {
+              "text": {
+                "$state": "/mode"
+              },
+              "tone": "muted"
+            },
+            "children": []
+          },
+          "e14": {
+            "type": "ActionRow",
+            "props": {},
+            "children": [
+              "e15",
+              "e16",
+              "e17"
+            ]
+          },
+          "e15": {
+            "type": "Button",
+            "props": {
+              "label": {
+                "$state": "/demoLabel"
+              },
+              "variant": "ghost"
+            },
+            "on": {
+              "press": {
+                "action": "invoke",
+                "params": {
+                  "name": "toggleDemo"
+                }
+              }
+            },
+            "children": []
+          },
+          "e16": {
+            "type": "Button",
+            "props": {
+              "label": {
+                "$state": "/pauseLabel"
+              },
+              "variant": "ghost"
+            },
+            "on": {
+              "press": {
+                "action": "invoke",
+                "params": {
+                  "name": "togglePause"
+                }
+              }
+            },
+            "children": []
+          },
+          "e17": {
+            "type": "Button",
+            "props": {
+              "label": "Reset",
+              "variant": "ghost"
+            },
+            "on": {
+              "press": {
+                "action": "invoke",
+                "params": {
+                  "name": "reset"
+                }
+              }
+            },
+            "children": []
+          }
+        }
+      }
+    },
+    {
+      "id": "explanation",
+      "label": "Explanation",
+      "spec": {
+        "root": "e0",
+        "elements": {
+          "e0": {
+            "type": "Stack",
+            "props": {},
+            "children": [
+              "e1",
+              "e2",
+              "e3"
+            ]
+          },
+          "e1": {
+            "type": "Text",
+            "props": {
+              "text": "The bucket holds 20 tokens and refills at 5 tokens per second. Each accepted request spends one token.",
+              "tone": "muted"
+            },
+            "children": []
+          },
+          "e2": {
+            "type": "Text",
+            "props": {
+              "text": "With fewer than one token, a request is rejected immediately. Requests are never queued. Refilling stops at capacity.",
+              "tone": "muted"
+            },
+            "children": []
+          },
+          "e3": {
+            "type": "Equation",
+            "props": {
+              "text": "Empty \u2192 full in 4 seconds"
+            },
+            "children": []
+          }
+        }
+      }
+    },
+    {
+      "id": "try-it",
+      "label": "Try it",
+      "spec": {
+        "root": "e0",
+        "elements": {
+          "e0": {
+            "type": "Stack",
+            "props": {},
+            "children": [
+              "e1"
+            ]
+          },
+          "e1": {
+            "type": "Section",
+            "props": {
+              "title": "Send more than the bucket holds"
+            },
+            "children": [
+              "e2",
+              "e3",
+              "e5"
+            ]
+          },
+          "e2": {
+            "type": "Text",
+            "props": {
+              "text": "Start full and send 25 requests at once. Predict how many will pass.",
+              "tone": "muted"
+            },
+            "children": []
+          },
+          "e3": {
+            "type": "ActionRow",
+            "props": {},
+            "children": [
+              "e4"
+            ]
+          },
+          "e4": {
+            "type": "Button",
+            "props": {
+              "label": "Try a burst of 25",
+              "variant": "primary"
+            },
+            "on": {
+              "press": {
+                "action": "invoke",
+                "params": {
+                  "name": "tryBurst"
+                }
+              }
+            },
+            "children": []
+          },
+          "e5": {
+            "type": "Status",
+            "props": {
+              "text": {
+                "$state": "/result"
+              }
+            },
+            "children": []
+          }
+        }
+      }
+    }
+  ]
+}

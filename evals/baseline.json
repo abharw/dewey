@@ -1,0 +1,66 @@
+[
+  {
+    "id": "immediate-http-404",
+    "domain": "everyday technology",
+    "horizon": "immediate",
+    "prompt": "What does HTTP 404 mean? I just want a quick answer.",
+    "diagnostic_opportunity": "The question is already specific enough to answer. This control case tests whether the model helps directly instead of requiring a knowledge inventory or turning every interaction into a lesson.",
+    "rubric": "A useful response briefly explains that the server could not find the requested page or resource. A small example or optional next step is acceptable. Do not reward asking about prior knowledge, career goals, proficiency, or a learning plan here. Do not penalize the absence of a diagnostic question. Flag factual overstatements such as treating 404 as proof that the internet connection is broken, that the server is down, or that the page is permanently gone. Receiving a clear answer provides no evidence of learner understanding."
+  },
+  {
+    "id": "immediate-training-accuracy",
+    "domain": "machine learning",
+    "horizon": "immediate",
+    "prompt": "If a model gets 99% right on its training examples, that means it'll be good on new examples too, right? I have a few minutes to get my head around this.",
+    "diagnostic_opportunity": "The learner has offered a specific possible misconception. The response can use that evidence immediately without first asking the learner to diagnose their own gaps.",
+    "rubric": "A useful response explains that training accuracy alone does not establish performance on new examples, using an accessible reason or counterexample. It may introduce testing on held-out examples without assuming the learner already knows validation jargon. A brief prediction or comparison can help reveal the learner's reasoning, but a direct explanation is also appropriate. Do not require a question or withhold the correction until the learner answers one. Flag agreeing with the premise, treating the learner as globally incapable from this one statement, or requiring a long prerequisites survey before helping. Do not infer that the correction has been learned."
+  },
+  {
+    "id": "short-term-ai-vendor-comparison",
+    "domain": "AI at work",
+    "horizon": "short-term",
+    "prompt": "I have two weeks to get better at using AI to compare vendor proposals for my team. Can you help me learn?",
+    "diagnostic_opportunity": "The practical purpose and deadline are known; the learner's current workflow, judgment, and experience are not. A small work example or consequential choice could reveal where help is needed.",
+    "rubric": "A useful opening connects learning to comparing proposals and offers a concrete way to begin. It should leave room to discover the learner's current approach through an example, artifact, decision, or focused question; asking for an exhaustive self-reported skill inventory is burdensome. It need not ask a question if it supplies a useful first activity with a clear opportunity for the learner to respond. Distinguish assumptions stated as provisional from claims about the learner's ability. Look for attention to criteria, source evidence, missing information, or checking AI-generated comparisons, rather than equating polished AI output with the learner's judgment. Do not require every concern in one reply or reward an elaborate two-week curriculum merely for its length."
+  },
+  {
+    "id": "short-term-system-design-interview",
+    "domain": "interview preparation",
+    "horizon": "short-term",
+    "prompt": "I have a system design interview in three weeks. Help me prepare.",
+    "diagnostic_opportunity": "The deadline is clear, but the interview's demands and the learner's starting point are open. A short mock problem, meaningful choice, or targeted context question can inform preparation.",
+    "rubric": "A useful opening gives an actionable start and makes preparation adjustable to the interview and learner. It may ask about role or interview format, or begin a small mock and discover the starting point through the response. It should not require the learner to enumerate all system-design knowledge or identify every prerequisite before beginning. Flag confidently assigning an experience level, assuming a particular company or interview format without qualification, and presenting a fixed advanced syllabus as though the learner's needs are already known. Do not penalize a provisional plan or a concise direct start. A polished preparation plan or one proposed exercise cannot establish readiness or learning."
+  },
+  {
+    "id": "long-term-ml-fundamentals",
+    "domain": "machine learning",
+    "horizon": "long-term",
+    "prompt": "I'd like to understand machine learning over the next few months. Where do we start?",
+    "diagnostic_opportunity": "There is time for depth, but 'understand' and the learner's foundations are not yet established. The model can start with an accessible concept or task while exploring what matters to this person.",
+    "rubric": "A useful response offers a manageable starting point and a way to learn about the person's purpose or reasoning. A concrete example, simple prediction, or optional task can supply evidence; a focused context question can also be useful. Do not treat asking the learner to rate their mathematics or coding ability as sufficient evidence of either. Flag asserting that the learner is a novice or expert, assuming a fixed programming or research goal, or blocking all useful learning behind an extensive prerequisite curriculum. An explicit provisional starting assumption is acceptable when easy to revise. Do not reward the length of a multi-month roadmap or require the model to complete diagnosis in its first response."
+  },
+  {
+    "id": "long-term-spanish-conversation",
+    "domain": "language learning",
+    "horizon": "long-term",
+    "prompt": "I want to be able to have conversations in Spanish with my partner's family in about six months. Can we work on that?",
+    "diagnostic_opportunity": "The desired use is social conversation. Existing comprehension, speaking ability, and relevant situations are unknown; an easy exchange or a focused question could begin discovering them.",
+    "rubric": "A useful response connects practice to conversations with the family and offers a feasible first interaction or small next step. It may begin an accessible exchange with an easy route to more or less support, ask about likely situations, or invite existing experience without making a placement inventory mandatory. Flag assuming a country, dialect, or complete beginner status without qualification. Avoid treating text-only performance as proof of spoken fluency or promising fluency by the deadline. Do not require audio collection, a full schedule, or a complete assessment in this first text response. A direct useful start and a low-burden opportunity to respond can be enough."
+  },
+  {
+    "id": "drawing",
+    "domain": "creative practice",
+    "horizon": null,
+    "prompt": "I'd like to keep getting better at drawing. Could you work with me on it?",
+    "diagnostic_opportunity": "Neither an endpoint nor a single standard of improvement has been specified. Existing work, an intention, or a small drawing activity could reveal useful next steps without assuming the learner's style or level.",
+    "rubric": "A useful response offers a concrete way to start, such as discussing an existing drawing, choosing an appealing subject, or trying a small exercise. It leaves room for the learner's intention rather than assuming realism, professional illustration, or the model's aesthetic preferences are the goal. Inviting an artifact is useful but should not become a barrier if none is available. Flag diagnosing visual strengths or weaknesses without seeing relevant work, treating a written description as proof of drawing skill, or requiring a long self-rating inventory. Do not require a deadline or curriculum for an ongoing interest."
+  },
+  {
+    "id": "better-at-ai",
+    "domain": "AI literacy",
+    "horizon": null,
+    "prompt": "I want to get better at AI. Can you help?",
+    "diagnostic_opportunity": "Both purpose and time horizon are open. The learner may mean practical tool use, technical understanding, or something else, and need not already know the categories.",
+    "rubric": "A useful opening makes it easy to begin clarifying the purpose, for example with a few concrete possibilities, a relevant small activity, or one focused context question. The learner should not need technical vocabulary, a precise syllabus, or a complete self-assessment to get help. Flag confidently treating 'AI' as only prompt engineering, coding, machine-learning research, or a particular product without leaving room to redirect. A provisional example is acceptable. Observe whether the response offers immediate value or simply hands the entire definition of the problem back to the learner. Do not require the model to settle the goal, horizon, and starting knowledge all at once."
+  }
+]

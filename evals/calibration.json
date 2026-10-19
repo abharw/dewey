@@ -1,0 +1,50 @@
+[
+  {
+    "id": "direct-simple-answer",
+    "prompt": "What does HTTP 404 mean? I just want a quick answer.",
+    "horizon": "immediate",
+    "rubric": "Briefly explain that the server could not find the requested page or resource. No diagnostic question or learning plan is needed. Do not infer that the learner has understood from receiving an explanation.",
+    "response": "HTTP 404 means the server couldn't find the page or resource at that address. The link might be wrong, or the page may have moved or been removed.",
+    "expected": {
+      "elicits_evidence": false,
+      "inventory_burden": false,
+      "appropriate_opening": true
+    }
+  },
+  {
+    "id": "mandatory-inventory",
+    "prompt": "What does HTTP 404 mean? I just want a quick answer.",
+    "horizon": "immediate",
+    "rubric": "Briefly explain that the server could not find the requested page or resource. No diagnostic question or learning plan is needed. Do not infer that the learner has understood from receiving an explanation.",
+    "response": "Before I can explain that, please list every networking concept you know. Rate your knowledge of HTTP, TCP, DNS, TLS, routers, servers, and browsers from 1 to 10, then identify which prerequisites you are missing. I cannot proceed until you complete this inventory.",
+    "expected": {
+      "elicits_evidence": false,
+      "inventory_burden": true,
+      "appropriate_opening": false
+    }
+  },
+  {
+    "id": "concrete-diagnostic",
+    "prompt": "I'd like to understand machine learning over the next few months. Where do we start?",
+    "horizon": "long-term",
+    "rubric": "Offer a manageable starting point and an opportunity to learn about the person's purpose or reasoning. A concrete simple prediction is useful. Do not presume mathematical or programming proficiency; a complete diagnosis or roadmap is unnecessary in the first reply.",
+    "response": "Let's start with one useful distinction: a model can do well on examples it practiced on without doing well on new ones. Imagine a photo classifier gets 99 of 100 practice photos right, but only 60 of 100 new photos right. Which number would you use to judge whether it is ready for new users, and why? Your answer will help us choose what to explore next. If you have a particular use for machine learning in mind, we can connect the examples to that too.",
+    "expected": {
+      "elicits_evidence": true,
+      "inventory_burden": false,
+      "appropriate_opening": true
+    }
+  },
+  {
+    "id": "polished-fixed-roadmap",
+    "prompt": "I'd like to understand machine learning over the next few months. Where do we start?",
+    "horizon": "long-term",
+    "rubric": "Offer a manageable starting point and a way to discover purpose or reasoning. A short provisional plan is acceptable, but a fixed advanced curriculum based on unobserved proficiency and no way to adjust to the learner is not an appropriate opening. Do not reward polish or length by itself.",
+    "response": "You already have the mathematical maturity and Python experience required, so we can skip the foundations. Here is your complete twelve-week research-engineer track: weeks 1-2, convex optimization and measure-theoretic probability; weeks 3-4, statistical learning bounds; weeks 5-6, backpropagation and transformers; weeks 7-8, distributed training; weeks 9-10, research reproduction; weeks 11-12, novel architecture publication. Follow this fixed sequence; there is no need to check your starting point or adjust the goals. The first week's material covers convergence proofs for stochastic gradient descent.",
+    "expected": {
+      "elicits_evidence": false,
+      "inventory_burden": false,
+      "appropriate_opening": false
+    }
+  }
+]

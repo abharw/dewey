@@ -1,0 +1,320 @@
+{
+  "version": 1,
+  "tabs": [
+    {
+      "id": "controls",
+      "label": "Controls",
+      "spec": {
+        "root": "e0",
+        "elements": {
+          "e0": {
+            "type": "Stack",
+            "props": {},
+            "children": [
+              "e1",
+              "e4",
+              "e5",
+              "e6"
+            ]
+          },
+          "e1": {
+            "type": "ActionRow",
+            "props": {},
+            "children": [
+              "e2",
+              "e3"
+            ]
+          },
+          "e2": {
+            "type": "Button",
+            "props": {
+              "label": {
+                "$state": "/playLabel"
+              },
+              "variant": "primary"
+            },
+            "on": {
+              "press": {
+                "action": "invoke",
+                "params": {
+                  "name": "togglePlayback"
+                }
+              }
+            },
+            "children": []
+          },
+          "e3": {
+            "type": "Button",
+            "props": {
+              "label": "Restart",
+              "variant": "secondary"
+            },
+            "on": {
+              "press": {
+                "action": "invoke",
+                "params": {
+                  "name": "restart"
+                }
+              }
+            },
+            "children": []
+          },
+          "e4": {
+            "type": "SelectField",
+            "props": {
+              "label": "Playback speed",
+              "value": {
+                "$bindState": "/inputs/speed"
+              },
+              "options": [
+                {
+                  "label": "0.5\u00d7",
+                  "value": "0.5"
+                },
+                {
+                  "label": "1\u00d7",
+                  "value": "1"
+                },
+                {
+                  "label": "1.5\u00d7",
+                  "value": "1.5"
+                },
+                {
+                  "label": "2\u00d7",
+                  "value": "2"
+                }
+              ]
+            },
+            "on": {
+              "change": {
+                "action": "invoke",
+                "params": {
+                  "name": "setSpeed"
+                }
+              }
+            },
+            "children": []
+          },
+          "e5": {
+            "type": "SliderField",
+            "props": {
+              "label": "Volume",
+              "value": {
+                "$bindState": "/inputs/volume"
+              },
+              "min": 0,
+              "max": 1,
+              "step": 0.05
+            },
+            "on": {
+              "change": {
+                "action": "invoke",
+                "params": {
+                  "name": "setVolume"
+                }
+              }
+            },
+            "children": []
+          },
+          "e6": {
+            "type": "ActionRow",
+            "props": {},
+            "children": [
+              "e7",
+              "e8"
+            ]
+          },
+          "e7": {
+            "type": "Button",
+            "props": {
+              "label": {
+                "$state": "/muteLabel"
+              },
+              "variant": "ghost"
+            },
+            "on": {
+              "press": {
+                "action": "invoke",
+                "params": {
+                  "name": "toggleMute"
+                }
+              }
+            },
+            "children": []
+          },
+          "e8": {
+            "type": "Button",
+            "props": {
+              "label": "Browser controls",
+              "variant": "ghost"
+            },
+            "on": {
+              "press": {
+                "action": "invoke",
+                "params": {
+                  "name": "toggleNative"
+                }
+              }
+            },
+            "children": []
+          }
+        }
+      }
+    },
+    {
+      "id": "explanation",
+      "label": "Explanation",
+      "spec": {
+        "root": "e0",
+        "elements": {
+          "e0": {
+            "type": "Stack",
+            "props": {},
+            "children": [
+              "e1"
+            ]
+          },
+          "e1": {
+            "type": "Section",
+            "props": {
+              "title": "From two points to one"
+            },
+            "children": [
+              "e2",
+              "e3",
+              "e4",
+              "e5"
+            ]
+          },
+          "e2": {
+            "type": "Text",
+            "props": {
+              "text": "Move the second point closer to the first. The secant\u2019s slope approaches 4: the tangent\u2019s slope at x = 2.",
+              "tone": "muted"
+            },
+            "children": []
+          },
+          "e3": {
+            "type": "Equation",
+            "props": {
+              "text": "4 + h \u2192 4"
+            },
+            "children": []
+          },
+          "e4": {
+            "type": "Text",
+            "props": {
+              "text": "This is a limit as h approaches zero. We never divide by zero.",
+              "tone": "muted"
+            },
+            "children": []
+          },
+          "e5": {
+            "type": "ActionRow",
+            "props": {},
+            "children": [
+              "e6"
+            ]
+          },
+          "e6": {
+            "type": "Button",
+            "props": {
+              "label": {
+                "$state": "/playLabel"
+              },
+              "variant": "primary"
+            },
+            "on": {
+              "press": {
+                "action": "invoke",
+                "params": {
+                  "name": "togglePlayback"
+                }
+              }
+            },
+            "children": []
+          }
+        }
+      }
+    },
+    {
+      "id": "try-it",
+      "label": "Try it",
+      "spec": {
+        "root": "e0",
+        "elements": {
+          "e0": {
+            "type": "Stack",
+            "props": {},
+            "children": [
+              "e1"
+            ]
+          },
+          "e1": {
+            "type": "Section",
+            "props": {
+              "title": "What is the tangent\u2019s slope at x = 3?"
+            },
+            "children": [
+              "e2",
+              "e3",
+              "e4",
+              "e6"
+            ]
+          },
+          "e2": {
+            "type": "Text",
+            "props": {
+              "text": "Use the same curve, f(x) = x\u00b2. Predict the slope before you check.",
+              "tone": "muted"
+            },
+            "children": []
+          },
+          "e3": {
+            "type": "NumberField",
+            "props": {
+              "label": "Your answer",
+              "value": {
+                "$bindState": "/inputs/answer"
+              },
+              "placeholder": "Your answer"
+            },
+            "children": []
+          },
+          "e4": {
+            "type": "ActionRow",
+            "props": {},
+            "children": [
+              "e5"
+            ]
+          },
+          "e5": {
+            "type": "Button",
+            "props": {
+              "label": "Check answer",
+              "variant": "primary"
+            },
+            "on": {
+              "press": {
+                "action": "invoke",
+                "params": {
+                  "name": "checkAnswer"
+                }
+              }
+            },
+            "children": []
+          },
+          "e6": {
+            "type": "Status",
+            "props": {
+              "text": {
+                "$state": "/feedback"
+              }
+            },
+            "children": []
+          }
+        }
+      }
+    }
+  ]
+}
